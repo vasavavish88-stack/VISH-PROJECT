@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>અકસ્માત વિગતો ફોર્મ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="time"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>અકસ્માત વિગતો ફોર્મ</h1>
+    <form action="/submit-form" method="post">
+        
+        <fieldset>
+            <legend>અકસ્માતની વિગતો</legend>
+            <div class="form-group">
+                <label for="accidentDate">તારીખ:</label>
+                <input type="date" id="accidentDate" name="accidentDate" required>
+            </div>
+            <div class="form-group">
+                <label for="accidentTime">સમય:</label>
+                <input type="time" id="accidentTime" name="accidentTime" required>
+            </div>
+            <div class="form-group">
+                <label for="location">સ્થળ:</label>
+                <input type="text" id="location" name="location" placeholder="ઉદા. સરદાર માર્ગ, અમદાવાદ" required>
+            </div>
+            <div class="form-group">
+                <label for="description">અકસ્માતનું વિવરણ:</label>
+                <textarea id="description" name="description" rows="4" placeholder="અકસ્માત કેવી રીતે થયો તેનું ટૂંકું વિવરણ" required></textarea>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>વાહનની વિગતો</legend>
+            <div class="form-group">
+                <label for="vehicleType">વાહનનો પ્રકાર:</label>
+                <select id="vehicleType" name="vehicleType" required>
+                    <option value="">પસંદ કરો</option>
+                    <option value="car">કાર</option>
+                    <option value="bike">બાઇક</option>
+                    <option value="truck">ટ્રક</option>
+                    <option value="bus">બસ</option>
+                    <option value="other">અન્ય</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicleNumber">વાહન નંબર:</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" placeholder="ઉદા. GJ01AB1234" required>
+            </div>
+            <div class="form-group">
+                <label for="ownerName">માલિકનું નામ:</label>
+                <input type="text" id="ownerName" name="ownerName" required>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>ચાલકની વિગતો</legend>
+            <div class="form-group">
+                <label for="driverName">ચાલકનું નામ:</label>
+                <input type="text" id="driverName" name="driverName" required>
+            </div>
+            <div class="form-group">
+                <label for="driverLicense">ડ્રાઇવિંગ લાઇસન્સ નંબર:</label>
+                <input type="text" id="driverLicense" name="driverLicense" required>
+            </div>
+            <div class="form-group">
+                <label for="driverContact">મોબાઈલ નંબર:</label>
+                <input type="text" id="driverContact" name="driverContact" placeholder="1234567890" required>
+            </div>
+        </fieldset>
+        
+        <br>
+
+        <button type="submit" class="btn-submit">ફોર્મ સબમિટ કરો</button>
+
+    </form>
+</div>
+
+</body>
+</html>
